@@ -1,0 +1,29 @@
+/* Minimal UI CSS to provide basic layout, spacing, and typography
+   This is a tiny fallback so the page is readable even if vendor CSS isn't present.
+*/
+:root{
+  --primary:#007bff;
+  --bg:#fff;
+  --text:#222;
+}
+html,body{
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  padding:0;
+  color:var(--text);
+  background:var(--bg);
+}
+.container{max-width:1100px;margin:0 auto;padding:0 16px}
+.header-main{padding:12px 0}
+.brand-wrap .logo{max-height:48px}
+.navbar{background:#f8f9fa;padding:8px 0}
+.section-intro .img-fluid{width:100%;height:auto;display:block}
+.card{border:1px solid #e6e6e6;border-radius:6px;padding:8px;margin-bottom:16px}
+.card-product-grid .img-wrap img{width:100%;height:auto;display:block}
+.title{display:block;font-weight:600;margin-bottom:6px}
+.price{color:var(--primary);font-weight:700}
+.btn{display:inline-block;padding:6px 12px;border-radius:4px;text-decoration:none}
+.btn-primary{background:var(--primary);color:#fff;border:none}
+.clearfix::after{content:"";display:block;clear:both}
+/* responsiveness */
+@media (max-width:768px){.container{padding:0 12px}.brand-wrap .logo{max-height:36px}}
