@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'myapp',
     'accounts',
     'store',
+    'carts',
 ]
 
 MIDDLEWARE = [
@@ -66,6 +67,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'myapp.context_processors.menu_links',
+                'carts.context_processor.counter',
             ],
         },
     },
@@ -137,3 +139,33 @@ STATICFILES_DIRS = [
 # Media files (User-uploaded content)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
+
+from django.contrib.messages import constants as messages
+MESSAGE_TAGS = {
+   
+    messages.ERROR: 'danger',
+  
+}
+
+# EMAIL_HOST = 'smtp.gmail.com'
+# EMAIL_PORT = 587
+# EMAIL_USE_TLS = True
+# EMAIL_HOST_USER = 'sarojdevkota521@gmail.com'
+# EMAIL_HOST_PASSWORD = 'Saroj@12345'  # Make sure to use environment variables for sensitive info
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sarojdevkota521@gmail.com'
+EMAIL_HOST_PASSWORD = '9768994772@12345'
+
+CSRF_COOKIE_HTTPONLY = False
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SAMESITE = "Lax"
+
+CSRF_TRUSTED_ORIGINS = [
+    "http://localhost",
+    "http://127.0.0.1",
+]
+
+
